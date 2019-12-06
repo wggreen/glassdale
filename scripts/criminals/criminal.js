@@ -2,6 +2,11 @@ const CriminalComponent = (criminal) => {
     const jailStart = new Date(criminal.incarceration.start).getFullYear()
     const jailEnd = new Date(criminal.incarceration.end).getFullYear()
     const jailTerm = jailEnd - jailStart
+    const isKiller = () => {
+        if(criminal.conviction === "manslaughter" || criminal.conviction === "murder") {
+            return true
+        }
+    }
     return `
         <section class="criminal">
             <header class="crim_name">

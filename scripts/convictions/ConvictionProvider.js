@@ -9,7 +9,6 @@ export const getConvictions = () => {
         .then(response => response.json())
         .then(
             parsedConvictions => {
-                console.table(parsedConvictions)
                 convictions = parsedConvictions.slice().sort()
             }
         )
