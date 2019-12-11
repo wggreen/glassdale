@@ -1,0 +1,15 @@
+.notes_area {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-bottom: 50px;
+}
+
+.note_component {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 20%;
+    border: 1px dashed black;
+    margin: 5px;
+    background-color: goldenrod;
+}

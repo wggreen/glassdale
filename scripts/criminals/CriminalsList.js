@@ -17,10 +17,29 @@ const CriminalList = () => {
             */
             const matchingCriminals = appStateCriminals.filter(currentCriminal => 
                 currentCriminal.conviction === crime) 
-            
 
-            render(matchingCriminals)
-        
+            if(matchingCriminals.length === 0) {
+                console.log("matchingCriminals.length = 0")
+                render(appStateCriminals)
+            } else {
+                render(matchingCriminals)
+            }
+    })
+
+    eventHub.addEventListener("criminalSelected", event => {
+        const criminalFilter = event.detail.criminalId
+        // You remembered to add the id of the criminal to the event detail, right?
+            /*
+                Filter the criminals application state down to the pcriminal selected in the dropdown menu
+            */
+            const filteredCriminals = appStateCriminals.filter(currentCriminal => 
+                currentCriminal.name === criminalFilter) 
+
+            if (filteredCriminals.length === 0) {
+                render(appStateCriminals)
+            } else {
+                render(filteredCriminals)
+            }        
     })
 
     const render = criminalCollection => {

@@ -28,6 +28,33 @@ const CriminalComponent = (criminal) => {
                 <span>
                     In jail for: ${jailTerm} years
                 </span>
+            </div>
+            <button class="button--note" id=${criminal.id}>Enter a note</button>
+            <dialog class="noteFormContainer" id="note--entry">
+                <div class="form_inputs">
+                    <label for="note-text">Enter your note:</label>
+                    <input type="text" id="note_text-${criminal.id}" size=35></input>
+                </div> 
+
+                    <br>
+
+                <div class ="form_info">
+                    <span class="note_template_text">Criminal: ${criminal.name}</span>
+
+                    <br>
+
+                    <span class="note_template_text">Today's date: ${new Date().toLocaleDateString()}</span>
+                </div>
+
+                    <br>
+
+                    <button class="saveNote" id="saveNote_${criminal.name.split(" ").join("-")}_${criminal.id}">Save Note</button>
+
+                    <br>
+                    <br>
+
+                    <button class="button--close" id="note_form__close">Close note form</button>
+            </dialog>
         </section>
     `
 }
