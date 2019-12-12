@@ -7,7 +7,6 @@ export const NoteFormComponent = () => {
     // Handle internal element click
     eventHub.addEventListener("click", clickEvent => {
         if (clickEvent.target.classList.contains("saveNote")) {
-            console.log(clickEvent.target.id)
             
             let suspectName = clickEvent.target.id.split("_")[1].split("-").join(" ")
             let suspectID = clickEvent.target.id.split("_")[2]

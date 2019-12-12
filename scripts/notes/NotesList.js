@@ -1,7 +1,9 @@
 import {useNotes} from "./NoteProvider.js"
 import NoteHTML from "./Note.js"
+import {deleteNote} from "./NoteProvider.js"
 
 const eventHub = document.querySelector("#appContainer")
+
 
 export const NoteList = () => {
     const appStateNotes = useNotes()
@@ -17,11 +19,20 @@ export const NoteList = () => {
 
     eventHub.addEventListener("click", clickEvent => {
         if (clickEvent.target.id === "button_notesClear") {
-            // console.log(clickEvent.target.id)
-            // debugger
-            // console.log("clear notes triggered")
-            // debugger
             clearNotes()
+        }
+    })
+
+    eventHub.addEventListener("click", clickEvent => {
+        if (clickEvent.target.id.startsWith("deleteNote--")) {
+            const [prefix, id] = clickEvent.target.id.split("--")
+            /*
+                Invoke the function that performs the delete operation.
+
+                Once the operation is complete you should THEN invoke
+                useNotes() and render the note list again.
+            */
+            deleteNote(id).then( () => render(useNotes()) )
         }
     })
 
@@ -50,7 +61,7 @@ export const NoteList = () => {
         contentTarget.innerHTML = `
             <br>
             <br>
-            <button id="button_notesClear">Clear notes</button>
+            <button id="button_notesClear">Hide notes</button>
         `
     }
 }

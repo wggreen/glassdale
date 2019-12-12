@@ -22,3 +22,10 @@ export const getNotes = () => {
 export const useNotes = () => {
     return notes
 }
+
+export const deleteNote = noteId => {
+    return fetch(`http://localhost:8000/notes/${noteId}`, {
+        method: "DELETE"
+    })
+        .then(getNotes)
+}

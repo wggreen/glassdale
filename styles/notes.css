@@ -21,3 +21,18 @@
 .show_button_notes_area {
     margin-bottom: 0px;
 }
+
+.note_buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.saveNote {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.button--close {
+    margin-top: 0px;
+    margin-bottom: 15px;
+}

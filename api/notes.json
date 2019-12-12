@@ -1,52 +1,10 @@
 {
   "notes": [
     {
-      "text": null,
-      "date": "12/11/2019",
-      "suspect": "Madelyn Lebsack",
-      "id": 1
-    },
-    {
-      "text": null,
-      "date": "12/11/2019",
-      "suspect": "Madelyn Lebsack",
-      "id": 2
-    },
-    {
-      "text": "abc123",
-      "date": "12/11/2019",
-      "suspect": "Madelyn Lebsack",
-      "id": 3
-    },
-    {
-      "text": "abc12345",
-      "date": "12/11/2019",
-      "suspect": "Madelyn Lebsack",
-      "id": 4
-    },
-    {
-      "text": "asjdjasloda",
-      "date": "12/11/2019",
-      "suspect": "Madelyn Lebsack",
-      "id": 5
-    },
-    {
-      "text": "please work",
-      "date": "12/11/2019",
-      "suspect": "Madelyn Lebsack",
-      "id": 6
-    },
-    {
-      "text": "show notes test",
-      "date": "12/11/2019",
-      "suspect": "Madelyn Lebsack",
-      "id": 7
-    },
-    {
-      "text": "test of refactoring",
+      "text": "Guilty as hell",
       "date": "12/12/2019",
       "suspect": "Madelyn Lebsack",
-      "id": 8
+      "id": 1
     }
   ]
 }

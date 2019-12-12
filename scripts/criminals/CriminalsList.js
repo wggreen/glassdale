@@ -19,7 +19,6 @@ const CriminalList = () => {
                 currentCriminal.conviction === crime) 
 
             if(matchingCriminals.length === 0) {
-                console.log("matchingCriminals.length = 0")
                 render(appStateCriminals)
             } else {
                 render(matchingCriminals)

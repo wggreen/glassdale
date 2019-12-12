@@ -12,6 +12,7 @@ const NoteHTML = (note) => {
             <div class="note__text">
                 <span>${note.text}</span>
             </div>
+            <button id="deleteNote--${note.id}">Delete</button>
         </section>
     `
 }

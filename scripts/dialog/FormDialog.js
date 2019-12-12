@@ -14,19 +14,9 @@ const NoteFormDialogComponent = () => {
             }
         )
 
-        // console.log(foundCriminal)
-        // debugger
-
-        // const criminalID = foundCriminal.id
-        // console.log(criminalID)
-        // debugger
-
-        // const criminalName = foundCriminal.name
-        // const today = new Date().toLocaleDateString()
-        // const criminalNameDash = foundCriminal.name.split(" ").join("-")
-
         const noteFormHTML = (criminal) => {
                 return `
+                    <button class="button--close" id="note_form__close">[x]</button>
                     <div class="form_inputs">
                         <label for="note-text">Enter your note:</label>
                         <input type="text" id="note_text-${criminal.id}" size=35></input>
@@ -41,15 +31,7 @@ const NoteFormDialogComponent = () => {
 
                         <span class="note_template_text">Today's date: ${new Date().toLocaleDateString()}</span>
                     </div>
-
-                    <br>
-
                     <button class="saveNote" id="saveNote_${criminal.name.split(" ").join("-")}_${criminal.id}">Save Note</button>
-
-                    <br>
-                    <br>
-
-                    <button class="button--close" id="note_form__close">Close note form</button>
                 `
             }
         

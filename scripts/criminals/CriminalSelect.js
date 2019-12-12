@@ -43,7 +43,6 @@ const CriminalSelect = () => {
     eventHub.addEventListener("change", changeEvent => {
         if(changeEvent.target.classList.contains("criminal_dropdown")) {
             const selectedCriminal = changeEvent.target.value.split("-").join(" ")
-            console.log(selectedCriminal)
  
             const message = new CustomEvent("criminalSelected", {
                 detail: {
