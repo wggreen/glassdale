@@ -10,7 +10,7 @@ const CriminalComponent = (criminal) => {
     return `
         <section class="criminal">
             <header class="crim_name">
-                <h3>${criminal.name}</h3>
+                <h3 class="crim_name__text">${criminal.name}</h3>
             </header>
             <div class ="crim_info">
                 <span>

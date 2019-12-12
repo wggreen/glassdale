@@ -13,3 +13,11 @@
     margin: 5px;
     background-color: goldenrod;
 }
+
+#button_showNotes {
+    margin-top: 45px;
+}
+
+.show_button_notes_area {
+    margin-bottom: 0px;
+}

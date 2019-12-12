@@ -72,6 +72,27 @@ const CriminalList = () => {
         }
     })
 
+    eventHub.addEventListener("click", clickEvent => {
+        if(clickEvent.target.classList.contains("show_criminals")) {
+            const clearTarget = document.querySelector(".witness_button")
+            clearTarget.innerHTML = ""
+            ShowWitnessesButton()
+            const witnessTarget = document.querySelector(".witnessesContainer")
+            witnessTarget.innerHTML = ""
+            const criminalTarget = document.querySelector(".criminalsContainer")
+            criminalTarget.innerHTML = ""
+            render(appStateCriminals)
+        }
+    })
+
+    const ShowWitnessesButton = () => {
+        const clearTarget = document.querySelector(".witness_button")
+        clearTarget.innerHTML = ""
+        clearTarget.innerHTML = `
+            <button class="button--witness">Show witnesses</button>
+        `
+    }
+
     const render = criminalCollection => {
         const contentTarget = document.querySelector(".criminalsContainer")
         contentTarget.innerHTML = ""

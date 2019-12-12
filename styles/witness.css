@@ -1,10 +1,10 @@
-.criminalsContainer {
+.witnessesContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.criminal {
+.witness {
     border: 1px solid #ababab;
     padding: 5px;
     box-shadow: 3px 3px grey;
@@ -12,23 +12,11 @@
     margin-bottom: 25px;
 }
 
-.crim_info {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    padding: 5px;
-    margin: 10px;
-}
-
-.crim_name__text {
+.witness_name__text {
     text-decoration: underline;
     margin: 0px;
 }
 
-.alibi_name {
-    text-decoration: underline;
-}
-
-.alibi_button {
-    margin-top: 10px;
+.witness_button {
+    margin-bottom: 20px;
 }

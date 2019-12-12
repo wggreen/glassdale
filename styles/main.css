@@ -1,3 +1,10 @@
 @import "./criminal.css";
 @import "./notes.css";
 @import "./forms.css";
+@import "./witness.css";
+@import "./filters.css";
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
