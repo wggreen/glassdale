@@ -34,10 +34,17 @@ const AssociateDialogComponent = () => {
         contentTarget.innerHTML = `
             <dialog class="alibies">
                 <div class="alibi__text"></div>
-                <button id="closeDialog">Close dialog</button>
+                <button class="closeDialog">Close dialog</button>
             </dialog>
         `
     }
+
+    eventHub.addEventListener("click", theEvent => {
+        if (theEvent.target.classList.contains("closeDialog")) {
+            const theDialog = document.querySelector(".alibies")
+            theDialog.close()
+        }
+    })
 
     render()
 
