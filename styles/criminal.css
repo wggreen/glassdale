@@ -24,3 +24,11 @@ h3 {
 .criminal {
     flex-basis: 20%;
 }
+
+.alibi_name {
+    text-decoration: underline;
+}
+
+.alibi_button {
+    margin-top: 10px;
+}

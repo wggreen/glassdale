@@ -3,19 +3,19 @@ import {getConvictions} from "./convictions/ConvictionProvider.js"
 import CriminalListComponent from "./criminals/CriminalsList.js"
 import ConvictionSelect from "./convictions/ConvictionSelect.js"
 import CriminalSelect from "./criminals/CriminalSelect.js"
-import initializeDetailButtonEvents from "./notes/dialogs.js"
-import dialogEvents from "./notes/dialogs.js"
+import NoteFormDialogComponent from "./dialog/FormDialog.js"
 import {NoteFormComponent} from "./notes/NoteForm.js"
 import { getNotes } from "./notes/NoteProvider.js"
 import {NoteList} from "./notes/NotesList.js"
+import AssociateDialogComponent from "./dialog/AssociateDialog.js"
 
 getCriminals()
     .then(() => CriminalSelect())
     .then(() => CriminalListComponent())
-    .then(initializeDetailButtonEvents())
 getConvictions()
     .then(() => ConvictionSelect())
-    .then(dialogEvents())
+    .then(NoteFormDialogComponent())
     .then(NoteFormComponent())
+    .then(AssociateDialogComponent())
 getNotes()
     .then(() => NoteList())

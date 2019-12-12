@@ -1,8 +1,6 @@
 let notes = []
 
-export const saveNote = note => {
-    console.log("saveNote triggered")
-    
+export const saveNote = note => {    
     fetch('http://localhost:8000/notes', {
         method: "POST",
         headers: {
@@ -14,7 +12,6 @@ export const saveNote = note => {
 }
 
 export const getNotes = () => {
-
     return fetch("http://localhost:8000/notes")
         .then(response => response.json())
         .then((noteArray) => {

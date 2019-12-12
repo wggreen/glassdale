@@ -42,6 +42,36 @@ const CriminalList = () => {
             }        
     })
 
+    eventHub.addEventListener("click", clickEvent => {
+        if (clickEvent.target.id.startsWith("associates--")) {
+
+            const [prefix, id] = clickEvent.target.id.split("--")
+            
+
+            const message = new CustomEvent("associateButtonClicked", {
+                detail: {
+                    criminalId: id
+                }
+            })
+            eventHub.dispatchEvent(message)
+        }
+    })
+
+    eventHub.addEventListener("click", clickEvent => {
+        if (clickEvent.target.id.startsWith("note_form--")) {
+
+            const [prefix, id] = clickEvent.target.id.split("--")
+            
+
+            const message = new CustomEvent("noteButtonClicked", {
+                detail: {
+                    criminalId: id
+                }
+            })
+            eventHub.dispatchEvent(message)
+        }
+    })
+
     const render = criminalCollection => {
         const contentTarget = document.querySelector(".criminalsContainer")
         contentTarget.innerHTML = ""
