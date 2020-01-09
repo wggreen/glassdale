@@ -29,11 +29,11 @@ const CriminalComponent = (criminal) => {
                     In jail for: ${jailTerm} years
                 </span>
             </div>
-            <button class="button--note" id="note_form--${criminal.id}">Enter a note</button>
             
             <div class="alibi_button">
-                <button id="associates--${criminal.id}">Associate Alibis</button>
+                <button class="button--alibi" id="associates--${criminal.id}">Associate Alibis</button>
             </div>
+            <button class="button--note" id="note_form--${criminal.id}">Enter a note</button>
             <dialog class="note_form" id="note--entry">
 
             </dialog>

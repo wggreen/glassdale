@@ -29,3 +29,14 @@ export const deleteNote = noteId => {
     })
         .then(getNotes)
 }
+
+export const editNote = note => {
+    return fetch(`http://localhost:8000/notes/${note.id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(note)
+    })
+    .then(getNotes)
+}

@@ -36,6 +36,21 @@ export const NoteList = () => {
         }
     })
 
+    eventHub.addEventListener("click", clickEvent => {
+        if (clickEvent.target.id.startsWith("editNote--")) {
+
+            const [prefix, id] = clickEvent.target.id.split("--")
+
+            const message = new CustomEvent("editButtonClicked", {
+                detail: {
+                    noteId: id
+                }
+            })
+            eventHub.dispatchEvent(message)
+        }
+    })
+
+
     const render = (notesCollection) => {
         const contentTarget = document.querySelector(".notes_area")
         contentTarget.innerHTML = ""
@@ -44,6 +59,20 @@ export const NoteList = () => {
             ${notesHTML}
         `
     }
+
+    eventHub.addEventListener("noteEdited", event => {
+        var wasItEdited = event.detail.editStatus
+        if (wasItEdited = "edited") {
+            const updatedAppStateNotes = useNotes()
+            const contentTarget = document.querySelector(".notes_area")
+            contentTarget.innerHTML = ""
+            let notesHTML = updatedAppStateNotes.map(note => NoteHTML(note)).join(" ")
+            contentTarget.innerHTML = `
+                ${notesHTML}
+        `
+        }
+    })
+
 
     const clearNotes = () => {
         const documentTarget = document.querySelector(".clear_button_notes_area")

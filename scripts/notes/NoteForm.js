@@ -1,4 +1,4 @@
-import {saveNote} from "./NoteProvider.js"
+import {saveNote, editNote} from "./NoteProvider.js"
 
 export const NoteFormComponent = () => {
 
@@ -20,9 +20,43 @@ export const NoteFormComponent = () => {
                 suspect: suspectName
             }
 
-            // Change API state and application state
-            saveNote(newNote)
-        }
-    })}
+            const closeMessage = new CustomEvent("closeFormDialog", {
+                detail: {
+                    closeFormDialog: "do it"
+                }
+            })
 
-    // rest of the code here
+            // Change API state and application state
+            saveNote(newNote).then(
+                () => eventHub.dispatchEvent(closeMessage)
+            )
+        }
+    })
+    eventHub.addEventListener("click", clickEvent => {
+        if (clickEvent.target.classList.contains("save_edit")) {
+
+            let suspectName = clickEvent.target.id.split("_")[1].split("-").join(" ")
+            let suspectID = clickEvent.target.id.split("_")[2]
+            let noteID = clickEvent.target.id.split("_")[3]
+            let noteText = document.getElementById(`note_text-${suspectID}`).value
+            let today = new Date().toLocaleDateString()
+
+            const newNote = {
+                text: noteText,
+                date: today,
+                suspect: suspectName,
+                id: noteID 
+            }
+
+            const message = new CustomEvent("closeEditDialog", {
+                detail: {
+                    closeEditDialog: "do it"
+                }
+            })
+
+            editNote(newNote)
+            .then(() => eventHub.dispatchEvent(message))
+
+        }
+    })
+}

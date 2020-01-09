@@ -1,6 +1,6 @@
 let officers = []
 
-const useOfficers = () => {
+export const useOfficers = () => {
     return officers
 }
 

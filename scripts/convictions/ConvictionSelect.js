@@ -27,7 +27,7 @@ const ConvictionSelect = () => {
    
    const render = (convictionCollection) => {
        contentTarget.innerHTML = `
-       <select class="dropdown" id="crimeSelect">
+       <select class="conviction_dropdown" id="crimeSelect">
        <option value="0">Please select a crime...</option>
        ${
            convictions.map(conviction => 
@@ -41,7 +41,7 @@ const ConvictionSelect = () => {
     render(convictions)
 
     eventHub.addEventListener("change", changeEvent => {
-        if(changeEvent.target.classList.contains("dropdown")) {
+        if(changeEvent.target.classList.contains("conviction_dropdown")) {
             const selectedCrime = changeEvent.target.value.split("-").join(" ")
  
             const message = new CustomEvent("crimeSelected", {

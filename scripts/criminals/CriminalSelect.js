@@ -23,6 +23,19 @@ const CriminalSelect = () => {
         Hub so that the criminal list can listen for it and change what
         it renders.
     */
+
+   eventHub.addEventListener("change", changeEvent => {
+    if(changeEvent.target.classList.contains("criminal_dropdown")) {
+        const selectedCriminal = changeEvent.target.value.split("-").join(" ")
+
+        const message = new CustomEvent("criminalSelected", {
+            detail: {
+                criminalId: selectedCriminal
+            }
+        })
+        eventHub.dispatchEvent(message)
+    }
+    })
    
    
    const render = (criminalCollection) => {
@@ -40,18 +53,6 @@ const CriminalSelect = () => {
 
     render(criminals)
 
-    eventHub.addEventListener("change", changeEvent => {
-        if(changeEvent.target.classList.contains("criminal_dropdown")) {
-            const selectedCriminal = changeEvent.target.value.split("-").join(" ")
- 
-            const message = new CustomEvent("criminalSelected", {
-                detail: {
-                    criminalId: selectedCriminal
-                }
-            })
-            eventHub.dispatchEvent(message)
-        }
-    })
 }
 
 export default CriminalSelect
